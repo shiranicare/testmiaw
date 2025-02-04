@@ -17,14 +17,18 @@
 		embeddedservice_bootstrap.settings.prepopulatedPrechatFields = {Company: "Web Chat"};    
 		embeddedservice_bootstrap.settings.enabledFeatures = ["LiveAgent"];
 		embeddedservice_bootstrap.settings.entryFeature = "LiveAgent";
-    		embeddedservice_bootstrap.init(
-			'00D9p000003iexh',
-        		'MIAW_Chat_Deployment',
-        		'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
-        		{
-            			scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
-        		}
-    		);
+		try {													   
+	    		embeddedservice_bootstrap.init(
+				'00D9p000003iexh',
+	        		'MIAW_Chat_Deployment',
+	        		'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
+	        		{
+	            			scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
+	        		}
+	    		);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
 		};        
 
     		if (window.embeddedservice_bootstrap) b("https://service.force.com");        
