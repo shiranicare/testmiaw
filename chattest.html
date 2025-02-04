@@ -1,24 +1,46 @@
 <html>
   <body>
     <h1>MIAW Test</h1>
-	  <script type='text/javascript'>
-		  function initEmbeddedMessaging() {
-        try {
-            embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+	<script type='text/javascript' src='https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084/assets/js/bootstrap.min.js'></script>
+	
+	<script type="text/javascript" id="webchat-embedded-inline__20210324_2132">
+		function isSafari() {return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || /constructor/i.test(window.HTMLElement) || "[object SafariRemoteNotification]" === (!window.safari || "undefined" !== typeof safari && safari.pushNotification).toString()    }
+		function isIE() {return !!document.documentMode}
+		function isIos() {
+			return "iPad Simulator;iPhone Simulator;iPod Simulator;iPad;iPhone;iPod".split(";").includes(navigator.platform) || navigator.userAgent.includes("Mac") && "ontouchend" in document
+		}
+ 		function isSafariOnIos() {return isSafari() && isIos()}
+ 
+		function isBlockListBrowser() {return isIE()}(function() {if (!isBlockListBrowser()) {var b = function(c) {embeddedservice_bootstrap.settings.displayHelpButton = !0; 
+		embeddedservice_bootstrap.settings.language = ""; 
+		embeddedservice_bootstrap.settings.defaultMinimizedText = "Chat with the Team"; 
+		embeddedservice_bootstrap.settings.disabledMinimizedText = "No Agent is available"; 
+		embeddedservice_bootstrap.settings.prepopulatedPrechatFields = {Company: "Web Chat"};    
+		embeddedservice_bootstrap.settings.enabledFeatures = ["LiveAgent"];
+		embeddedservice_bootstrap.settings.entryFeature = "LiveAgent";
+    		embeddedservice_bootstrap.init(
+			'00D9p000003iexh',
+        		'MIAW_Chat_Deployment',
+        		'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
+        		{
+            			scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
+        		}
+    		);
+		};        
 
-            embeddedservice_bootstrap.init(
-                '00D9p000003iexh',
-                'MIAW_Chat_Deployment',
-                'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
-                {
-                    scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
-                }
-            );
-        } catch (err) {
-            console.error('Error loading Embedded Messaging: ', err);
-        }
-    }</script>
-    <script type='text/javascript' src='https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+    		if (window.embeddedservice_bootstrap) b("https://service.force.com");        
 
+    		else {
+        		var a = document.createElement("script");            
+        		a.setAttribute("src", "https://icare--crmi4.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js");            
+        		a.onload = function() {
+            			b(null)
+            		};  
+            		document.body.appendChild(a)
+            	}
+            	}
+		})();
+	</script>
+ 
   </body>
 </html>
