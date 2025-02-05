@@ -31,11 +31,8 @@
 				}
 			}
 		}
-	</script>
-	<script>
-  		document.addEventListener('launchMIAWChat', function(e){embeddedservice_bootstrap.utilAPI.launchChat();});
 		function openChatbot(){
-			document.dispatchEvent(new CustomEvent("launchMIAWChat"));
+			embeddedservice_bootstrap.utilAPI.launchChat();
     		}
 	</script>
 	  
