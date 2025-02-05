@@ -14,10 +14,6 @@
 		
 		function initEmbeddedMessaging() {
 			if (!isBlockListBrowser()) {
-				//embeddedservice_bootstrap.settings.displayHelpButton = !0; 
-				//embeddedservice_bootstrap.settings.defaultMinimizedText = "Chat with the Team"; 
-				//embeddedservice_bootstrap.settings.disabledMinimizedText = "No Agent is available"; 
-				//embeddedservice_bootstrap.settings.prepopulatedPrechatFields = {Company: "Web Chat"};    
 				try {
 					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 					embeddedservice_bootstrap.init(
@@ -38,6 +34,10 @@
 		setTimeout(function(){
       			initEmbeddedMessaging();
     		}, 2000);
+		window.addEventListener("onEmbeddedMessagingReady", (event) => {
+  			console.log("Received the onEmbeddedMessagingConversationStarted event…");
+  			console.log("Event detail: ", event.detail);
+		});
 	</script>
   </body>
 </html>
