@@ -17,7 +17,7 @@
 			if (!isBlockListBrowser()) {
 				try {
 					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-					embeddedservice_bootstrap.settings.defaultMinimizedText = "Chat with the Team"; 
+					embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
 					embeddedservice_bootstrap.init(
 						'00D9p000003iexh',
 						'MIAW_Chat_Deployment',
@@ -36,13 +36,13 @@
     		}
 	</script>
 	  
- 	<!-- script type='text/javascript'>
+ 	<script type='text/javascript'>
 		setTimeout(function(){
       			initEmbeddedMessaging();
-    		}, 2000);
+    		}, 1000);
 		window.addEventListener("onEmbeddedMessagingReady", (event) => {
   			
 		});
-  	</script -->
+  	</script>
   </body>
 </html>
