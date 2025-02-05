@@ -35,7 +35,12 @@
 			//};        
             		//}
 		}
+
+		window.addEventListener("onEmbeddedMessagingReady", () => {
+    			console.log('Received the onEmbeddedMessagingReady event...');
+    			initEmbeddedMessaging();
+		});
 	</script>
- 	<script type='text/javascript' src='' onload='initEmbeddedMessaging()'></script>
+ 	
   </body>
 </html>
