@@ -13,32 +13,31 @@
 		function isBlockListBrowser() {return isIE()}
 		
 		function initEmbeddedMessaging() {
-			if (!isBlockListBrowser()) {var b = function(c) {
+			if (!isBlockListBrowser()) {
 				//embeddedservice_bootstrap.settings.displayHelpButton = !0; 
-			//embeddedservice_bootstrap.settings.defaultMinimizedText = "Chat with the Team"; 
-			//embeddedservice_bootstrap.settings.disabledMinimizedText = "No Agent is available"; 
-			//embeddedservice_bootstrap.settings.prepopulatedPrechatFields = {Company: "Web Chat"};    
-			try {
-				embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-				embeddedservice_bootstrap.init(
-					'00D9p000003iexh',
-					'MIAW_Chat_Deployment',
-					'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
-					{
-						scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
-					}
-				);
-			} catch (err) {
-				console.error('Error loading Embedded Messaging: ', err);
+				//embeddedservice_bootstrap.settings.defaultMinimizedText = "Chat with the Team"; 
+				//embeddedservice_bootstrap.settings.disabledMinimizedText = "No Agent is available"; 
+				//embeddedservice_bootstrap.settings.prepopulatedPrechatFields = {Company: "Web Chat"};    
+				try {
+					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+					embeddedservice_bootstrap.init(
+						'00D9p000003iexh',
+						'MIAW_Chat_Deployment',
+						'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
+						{
+							scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
+				}
 			}
-			};        
-            		}
 		}
 	</script>
  	<script type='text/javascript'>
 		setTimeout(function(){
       			initEmbeddedMessaging();
-    		}, 5000);
+    		}, 2000);
 	</script>
   </body>
 </html>
