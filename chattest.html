@@ -1,7 +1,5 @@
 <html>
-	<!--
-        Copy Paste the initEmbeddedMessaging() from Embedded Service Code Snippet 
-    -->
+	<body>
     <script type="text/javascript" src="https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084/assets/js/bootstrap.min.js"></script>
 
     <button id="launchChatButton" onclick="launchChat()">
@@ -77,64 +75,5 @@
             
         }
     </script>
-</html>
-<html>0
-  <body>
-    <h1>MIAW Test</h1>
-	
-	<script type='text/javascript' src='https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084/assets/js/bootstrap.min.js'></script>
-	<script type="text/javascript" id="webchat-embedded-inline__20210324_2132">
-		function isSafari() {return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) || /constructor/i.test(window.HTMLElement) || "[object SafariRemoteNotification]" === (!window.safari || "undefined" !== typeof safari && safari.pushNotification).toString()    }
-		function isIE() {return !!document.documentMode}
-		function isIos() {
-			return "iPad Simulator;iPhone Simulator;iPod Simulator;iPad;iPhone;iPod".split(";").includes(navigator.platform) || navigator.userAgent.includes("Mac") && "ontouchend" in document
-		}
- 		function isSafariOnIos() {return isSafari() && isIos()}
- 
-		function isBlockListBrowser() {return isIE()}
-		
-		function initEmbeddedMessaging() {
-			if (!isBlockListBrowser()) {
-				try {
-					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-					//embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
-					embeddedservice_bootstrap.init(
-						'00D9p000003iexh',
-						'MIAW_Chat_Deployment',
-						'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
-						{
-							scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
-						}
-					);
-				} catch (err) {
-					console.error('Error loading Embedded Messaging: ', err);
-				}
-			}
-		}
-		function openChatbot(){
-			console.log('Chat opening');
-			embeddedservice_bootstrap.utilAPI
-			  .launchChat()
-			  .then(function (success) {
-			    console.log('Chat launched');
-			  })
-			  .catch(function (error) {
-			    console.log('Chat launch error');
-			  })
-			  .finally(function () {
-			    console.log('Chat launched finally');
-			  });
-    		}
-	</script>
-	  
- 	<script type='text/javascript'>
-		setTimeout(function(){
-      			initEmbeddedMessaging();
-    		}, 1000);
-		window.addEventListener("onEmbeddedMessagingReady", (event) => {
-  			
-		});
-  	</script>
-	  <a href="" class="chat-link" onclick="openChatbot()">Chat is Available</a>
-  </body>
+		</body>
 </html>
