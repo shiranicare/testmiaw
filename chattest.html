@@ -1,4 +1,84 @@
 <html>
+	<!--
+        Copy Paste the initEmbeddedMessaging() from Embedded Service Code Snippet 
+    -->
+    <script type="text/javascript" src="https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084/assets/js/bootstrap.min.js"></script>
+
+    <button id="launchChatButton" onclick="launchChat()">
+        Chat with our Agents!!!
+    </button>
+
+    <script>
+        window.onload=function() {      
+        
+            console.log( 'Inside onload' );
+            let startMessaging = sessionStorage.getItem(
+                'messagingStartCheck'
+            );
+
+            if ( 
+                startMessaging &&
+                startMessaging === 'YES'
+            ) {
+
+                console.log( 'Messaging was in progress' );        
+				/*
+					For session continuity when the page loads, 
+					Messaging is initiated and launched.
+				*/
+                initEmbeddedMessaging();
+                embeddedservice_bootstrap.utilAPI.launchChat();
+                
+            }
+            
+        };
+	function initEmbeddedMessaging() {
+			//if (!isBlockListBrowser()) {
+				try {
+					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+					//embeddedservice_bootstrap.settings.hideChatButtonOnLoad = true;
+					embeddedservice_bootstrap.init(
+						'00D9p000003iexh',
+						'MIAW_Chat_Deployment',
+						'https://icare--crmi3.sandbox.my.site.com/ESWMIAWChatDeployment1738131985084',
+						{
+							scrt2URL: 'https://icare--crmi3.sandbox.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
+				}
+			//}
+		};
+        function launchChat() {
+        
+			/*
+				For session continuity , sessionStorage is used.
+			*/
+            sessionStorage.setItem(
+                'messagingStartCheck',
+                'YES'
+            );
+            initEmbeddedMessaging();
+            console.log("Loading Messaging now");
+            setTimeout(() => {
+                embeddedservice_bootstrap.utilAPI
+                    .launchChat()
+                    .then(() => {
+                        console.log("Inside Launch Chat");
+                    })
+                    .catch(() => {
+                        console.log("Inside Launch Chat catch Block");
+                    })
+                    .finally(() => {
+                        console.log("Inside Launch Chat finally Block");
+                    });
+            }, 2000);
+            
+        }
+    </script>
+</html>
+<html>0
   <body>
     <h1>MIAW Test</h1>
 	
