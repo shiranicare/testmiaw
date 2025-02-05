@@ -13,7 +13,7 @@
 		function isBlockListBrowser() {return isIE()}
 		
 		function initEmbeddedMessaging() {
-			if (!isBlockListBrowser()) {var b = function(c) {embeddedservice_bootstrap.settings.displayHelpButton = !0; 
+			//if (!isBlockListBrowser()) {var b = function(c) {embeddedservice_bootstrap.settings.displayHelpButton = !0; 
 			embeddedservice_bootstrap.settings.language = "en_GB";
 			console.log('Loading Embedded Messaging');
 			//embeddedservice_bootstrap.settings.defaultMinimizedText = "Chat with the Team"; 
@@ -32,10 +32,10 @@
 			} catch (err) {
 				console.error('Error loading Embedded Messaging: ', err);
 			}
-			};        
-            		}
+			//};        
+            		//}
 		}
 	</script>
- 	<div onload='initEmbeddedMessaging()'></div>
+ 	<script type='text/javascript' src='' onload='initEmbeddedMessaging()'></script>
   </body>
 </html>
