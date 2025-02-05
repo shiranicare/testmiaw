@@ -36,11 +36,10 @@
             		//}
 		}
 	</script>
- 	<script type='text/javascript' onload='initEmbeddedMessaging()'>
-		window.addEventListener("onEmbeddedMessagingReady", () => {
-    			console.log('Received the onEmbeddedMessagingReady event...');
-    			//initEmbeddedMessaging();
-		});
+ 	<script type='text/javascript'>
+		setTimeout(function(){
+      			initEmbeddedMessaging();
+    		}, 2000);
 	</script>
   </body>
 </html>
