@@ -19,27 +19,8 @@
 
     <script>
         window.onload=function() {      
-        
             console.log( 'Inside onload' );
-            let startMessaging = sessionStorage.getItem(
-                'messagingStartCheck'
-            );
-
-            if ( 
-                startMessaging &&
-                startMessaging === 'YES'
-            ) {
-
-                console.log( 'Messaging was in progress' );        
-				/*
-					For session continuity when the page loads, 
-					Messaging is initiated and launched.
-				*/
-                initEmbeddedMessaging();
-                //embeddedservice_bootstrap.utilAPI.launchChat();
-                
-            }
-            
+            initEmbeddedMessaging();
         };
 	function initEmbeddedMessaging() {
 			//if (!isBlockListBrowser()) {
@@ -60,15 +41,6 @@
 			//}
 		};
         function launchChat() {
-        
-			/*
-				For session continuity , sessionStorage is used.
-			*/
-            sessionStorage.setItem(
-                'messagingStartCheck',
-                'YES'
-            );
-            //initEmbeddedMessaging();
             console.log("Loading Messaging now");
             setTimeout(() => {
                 embeddedservice_bootstrap.utilAPI
