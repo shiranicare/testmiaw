@@ -42,6 +42,7 @@
 		};
         function launchChat() {
             console.log("Loading Messaging now");
+	    embeddedservice_bootstrap.utilAPI.hideChatButton();
             setTimeout(() => {
                 embeddedservice_bootstrap.utilAPI
                     .launchChat()
